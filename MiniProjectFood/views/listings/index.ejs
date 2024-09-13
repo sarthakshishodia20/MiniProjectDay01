@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>All Listings</h3>
+    <!-- Home page of our websites showing the items of database line by line ab ejs mein html thodi si alg trh se likhi jati hai jese ye percentage = ka sign  kyu lgaya hai ye sb ejs ka part hai search krleana chota topic hai ho jaega -->
+    <form action="/listings/new" method="GET">
+        <button>Create new Food Item</button>
+    </form>
+    <ul>
+    <% for(let listing of allFoodListing){ %>
+        <li><a href="/listings/<%=listing._id%>"><%= listing.name %></a></li>
+    <% } %>
+</ul>
+</body>
+</html>

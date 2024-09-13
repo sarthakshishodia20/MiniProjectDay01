@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Listing food Details</h1>
+    <!-- show ejs mein hrr data item ki details show krte hai  -->
+    <ul>
+        <li>Name of food Item: <%=currentFoodListing.name%></li>
+        <li>Price: <%=currentFoodListing.price%></li>
+        <li>Ingredients: <%=currentFoodListing.ingredients%></li>
+        <li>Delivery Charge: <%=currentFoodListing.DeliveryCharge%></li>
+        <li>Location: <%=currentFoodListing.location%></li>
+    </ul>
+
+    <!-- Agr edit krna ho toh request yahan pr jaegi check in app.js -->
+     <!-- Ye form provide krwaega -->
+    <a href="/listings/<%=currentFoodListing._id%>/edit">Edit This Listing</a>
+    <!-- Agr delete krna ho toh reques yaha jaegi -->
+     
+    <form method="post" action="/listings/<%=currentFoodListing._id%>?_method=DELETE">
+        <button>Delete this Food Item</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaika_Zunction</title>
+</head>
+
+<body>
+
+    <!-- isme hm edit kr rhe hai placeholder na hoke vhi purani values hai jo uss id se connected this phle bhi -->
+    <h1>Create Listing</h1>
+    <form method="POST" action="/listings/<%= foodListing._id %>?_method=PUT">
+        <label for="name">Name:</label>
+        <input id="name" name="foodListing[name]" value="<%= foodListing.name %>" type="text" required>
+        <br><br>
+
+        <label for="ingredients">Ingredients:</label>
+        <textarea id="ingredients" name="foodListing[ingredients]" required><%= foodListing.ingredients %></textarea>
+        <br><br>
+
+        <label for="price">Price:</label>
+        <input id="price" name="foodListing[price]" value="<%= foodListing.price %>" type="number" required>
+        <br><br>
+
+        <label for="location">Location:</label>
+        <input id="location" name="foodListing[location]" value="<%= foodListing.location %>" type="text" required>
+        <br><br>
+
+        <label for="DeliveryCharge">Delivery Charge: </label>
+        <input type="number" name="foodListing[DeliveryCharge]" value="<%= foodListing.DeliveryCharge %>" required>
+        <br><br>
+
+        <label for="image">Image Link: </label>
+        <!-- Corrected value attribute for the image input -->
+        <input type="text" name="foodListing[image]" id="image" value="<%= foodListing.images %>" required>
+        <br><br>
+
+        <button type="submit">Edit</button>
+    </form>
+</body>
+
+</html>
